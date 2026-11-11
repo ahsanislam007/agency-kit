@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "command": "./hooks/ensure-graphify.sh"
+      },
+      {
+        "command": "./hooks/ensure-agency-templates.sh"
+      }
+    ]
+  }
+}
