@@ -1,23 +1,25 @@
-# Privacy audit (public release)
+# Privacy
 
-## Stripped / rewritten before publish
+This kit is meant to be safe to clone into other people’s machines and client repos.
 
-| Item | Action |
-|------|--------|
-| Absolute user home machine paths | Replaced with `$HOME` / `$PENTAGI_HOME` / `$MAESTRO_BIN` |
-| Local marketing site clone path | Removed; optional public demo URL only |
-| Private product package ids | Generic `com.example.agency.*` + neutral examples |
-| Client / internal app codenames | Neutral wording |
-| Freelance marketplace skills + routing | Excluded from this repo |
-| Career profile / rates / webhooks | Never copied |
+## What we keep out of the public tree
 
-## Leak gate (must be empty on skill/agent/rule trees)
+- Personal machine paths (hardcoded home directories)
+- Private product / package identifiers from the author’s other apps
+- Client or internal project codenames
+- Personal freelance / career / billing material
+- Secrets, webhooks, and env files
+
+## What is fine to ship
+
+- Portable env vars (`$HOME`, `$PENTAGI_HOME`, etc.)
+- Public upstream tool names the skills depend on (documented in [mcp-prerequisites.md](mcp-prerequisites.md))
+- An optional public demo URL for motion patterns (not a required brand)
+
+## Check yourself before forking further
 
 ```bash
-rg -n '/Users/mac|xeon360-hq|faremeter|proof-library|ahsanislam04|org_uid|Elara Heritage|Classmates|com\.xeon360|agency-upwork' .agents
+rg -n '/Users/[^/]+/' .agents
 ```
 
-## Allowlisted
-
-- Optional public motion demo host for grain/reveal/progress patterns (not a forced brand)
-- Upstream project names (PentAGI, Maestro, Playwright, 21st.dev)
+If that surfaces a personal home path, replace it with `$HOME` or a documented env var before you redistribute.

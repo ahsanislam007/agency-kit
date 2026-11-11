@@ -67,4 +67,4 @@ MIT — see [LICENSE](LICENSE). Some vendored skill folders carry their own LICE
 
 ## Privacy
 
-This release was audited for machine paths, client codenames, and personal freelance ops. See [docs/privacy-audit.md](docs/privacy-audit.md).
+No personal machine paths, client codenames, or freelance/career private data in the public tree. See [docs/privacy-audit.md](docs/privacy-audit.md).
